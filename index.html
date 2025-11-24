@@ -25,6 +25,89 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+
+        /* Vanilla CSS for Projects Section */
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .projects-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 3rem;
+        }
+
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .project-item {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .project-item {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 3rem;
+            }
+
+            .project-figure {
+                flex: 1;
+                max-width: 50%;
+            }
+
+            .project-details {
+                flex: 1;
+                padding-top: 1rem;
+            }
+        }
+
+        .project-figure {
+            margin: 0;
+            width: 100%;
+        }
+
+        .project-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0.5rem;
+        }
+
+        .project-name {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0 0 1rem 0;
+        }
+
+        .project-description {
+            color: #9ca3af;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #22d3ee;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
     </style>
 
 </head>
@@ -67,7 +150,8 @@
           - flex, items-center, justify-center: Vertically and horizontally centers the content.
         -->
         <section id="home" class="h-screen flex flex-col items-center justify-center text-center">
-            <img src="images/profile-photo-gero-linked-in251124-v1-resize-github.jpg" alt="Gero Doll" class="w-48 h-48 rounded-full mb-8 border-4 border-cyan-500 shadow-lg object-cover">
+            <img src="images/profile-photo-gero-linked-in251124-v1-resize-github.jpg" alt="Gero Doll"
+                class="w-48 h-48 rounded-full mb-8 border-4 border-cyan-500 shadow-lg object-cover">
             <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
                 Senior Technical Artist & Generative AI Specialist
             </h1>
@@ -136,96 +220,86 @@
         </section>
 
         <!-- 
-          Projects Section 
-          - grid, grid-cols-1, lg:grid-cols-3: Creates a responsive grid layout.
+          Projects Section (Vanilla HTML & CSS)
         -->
-        <section id="projects" class="py-20">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">Featured AI Projects & Workflows
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section id="projects" class="projects-container">
+            <h2 class="projects-title">Featured AI Projects & Workflows</h2>
 
-                <!-- Project Card 1 -->
-                <div
-                    class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/0D1117/38BDF8?text=Multi-Vision+Toolkit"
-                        alt="Multi-Vision Toolkit Thumbnail" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Multi-Vision Toolkit for ComfyUI</h3>
-                        <p class="text-gray-400 mb-4">
-                            A powerful suite of custom nodes for ComfyUI to handle multiple vision models and advanced
-                            image processing tasks in a single, unified workflow.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">ComfyUI</span>
-                            <span
-                                class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
-                            <span
-                                class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Custom
-                                Nodes</span>
-                        </div>
-                        <div class="flex gap-4 mt-4">
-                            <a href="https://github.com/Limbicnation" target="_blank"
-                                class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg w-full text-center transition-colors duration-300">View
-                                on GitHub</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="projects-list">
 
-                <!-- Project Card 2 -->
-                <div
-                    class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/0D1117/38BDF8?text=Depth+Estimation"
-                        alt="Depth Estimation Node Thumbnail" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">ComfyUI Depth Estimation Node</h3>
-                        <p class="text-gray-400 mb-4">
-                            A custom Python-based node that provides accurate depth estimation from 2D images, essential
-                            for 3D reconstruction and post-processing effects.
+                <!-- Project 1 -->
+                <article class="project-item">
+                    <figure class="project-figure">
+                        <img src="images/icon-comfy-ui-transparency-background-remover-node.png"
+                            alt="ComfyUI Transparency Background Remover Node Icon" class="project-img">
+                    </figure>
+                    <div class="project-details">
+                        <h3 class="project-name">Transparency Background Remover</h3>
+                        <p class="project-description">
+                            A powerful custom node for ComfyUI that efficiently removes backgrounds and handles
+                            transparency, streamlining complex image composition workflows.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">ComfyUI</span>
-                            <span
-                                class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
-                            <span
-                                class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Computer
-                                Vision</span>
-                        </div>
-                        <div class="flex gap-4 mt-4">
-                            <a href="https://github.com/Limbicnation" target="_blank"
-                                class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg w-full text-center transition-colors duration-300">View
-                                on GitHub</a>
-                        </div>
+                        <a href="https://github.com/Limbicnation/ComfyUI-TransparencyBackgroundRemover" target="_blank"
+                            class="project-link">View on GitHub
+                            &rarr;</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Project Card 3 -->
-                <div
-                    class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/0D1117/38BDF8?text=Workflow+Suite"
-                        alt="ComfyUI Workflow Suite Thumbnail" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">ComfyUI Workflow Suite</h3>
-                        <p class="text-gray-400 mb-4">
-                            A comprehensive collection of advanced and production-ready ComfyUI workflows for various
-                            generative tasks, including character creation and background removal.
+                <!-- Project 2 -->
+                <article class="project-item">
+                    <figure class="project-figure">
+                        <img src="images/icon-comfyui-depth-estimation-node.png"
+                            alt="ComfyUI Depth Estimation Node Icon" class="project-img">
+                    </figure>
+                    <div class="project-details">
+                        <h3 class="project-name">Depth Estimation Node</h3>
+                        <p class="project-description">
+                            A custom Python-based node that provides accurate depth estimation from 2D images.
+                            Essential for 3D reconstruction, depth-aware masking, and post-processing effects in
+                            generative workflows.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">ComfyUI</span>
-                            <span
-                                class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Workflows</span>
-                            <span
-                                class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">GenAI</span>
-                        </div>
-                        <div class="flex gap-4 mt-4">
-                            <a href="https://github.com/Limbicnation" target="_blank"
-                                class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg w-full text-center transition-colors duration-300">View
-                                on GitHub</a>
-                        </div>
+                        <a href="https://github.com/Limbicnation/ComfyUIDepthEstimation" target="_blank"
+                            class="project-link">View on GitHub
+                            &rarr;</a>
                     </div>
-                </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-item">
+                    <figure class="project-figure">
+                        <img src="images/icon-comfyui-random-seed-generator-node-node.png"
+                            alt="ComfyUI Random Seed Generator Node Icon" class="project-img">
+                    </figure>
+                    <div class="project-details">
+                        <h3 class="project-name">Random Seed Generator</h3>
+                        <p class="project-description">
+                            A utility node for ComfyUI that provides advanced control over seed generation, ensuring
+                            reproducibility and enabling precise iteration in generative art workflows.
+                        </p>
+                        <a href="https://github.com/Limbicnation/ComfyUI-RandomSeedGenerator" target="_blank"
+                            class="project-link">View on GitHub
+                            &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-item">
+                    <figure class="project-figure">
+                        <img src="images/icon-comfy-ui_face-detection-node.png" alt="ComfyUI Face Detection Node Icon"
+                            class="project-img">
+                    </figure>
+                    <div class="project-details">
+                        <h3 class="project-name">Face Detection Node</h3>
+                        <p class="project-description">
+                            An advanced face detection node for ComfyUI, leveraging state-of-the-art models to
+                            accurately identify and process faces within complex scenes for targeted editing and
+                            enhancement.
+                        </p>
+                        <a href="https://github.com/Limbicnation/ComfyUI_FaceDetectionNode" target="_blank"
+                            class="project-link">View on GitHub
+                            &rarr;</a>
+                    </div>
+                </article>
 
             </div>
         </section>
