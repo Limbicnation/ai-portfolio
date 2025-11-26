@@ -45,7 +45,7 @@ Then navigate to `http://localhost:8000` (or the port specified by the server).
 ## Development Conventions
 
 *   **Single-File Architecture:** Keep the project self-contained in `index.html` unless the complexity grows significantly.
-*   **Styling:** Use Tailwind utility classes for most styling. Use the `<style>` block in `index.html` only for global overrides (like scroll behavior) or specific animations not easily handled by Tailwind.
+*   **Styling:** Use Tailwind utility classes for most styling. Use the `<style>` block in `index.html` for global overrides, specific animations, and the **Projects Section** (which uses vanilla CSS for a custom, lightweight design).
 *   **Theme:** Strictly adhere to the **Dark Mode** aesthetic (bg-gray-900) with **Cyan** (cyan-400/500) accents.
 *   **Responsiveness:** Ensure all sections (Hero, About, Projects) are fully responsive, adopting a mobile-first approach.
 *   **Content:** Maintain the professional yet "mystical/technical" tone described in the project documentation.
